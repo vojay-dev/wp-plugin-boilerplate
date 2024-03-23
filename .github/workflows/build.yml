@@ -13,6 +13,8 @@ jobs:
       - name: Read dotenv
         id: dotenv
         uses: falti/dotenv-action@v1.1
+        with:
+          log-variables: true
 
       - name: Checkout code
         uses: actions/checkout@v2
