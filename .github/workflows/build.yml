@@ -20,7 +20,7 @@ jobs:
           log-variables: true
 
       - name: Run build script
-        run: ./scripts/build.sh
+        run: ./bin/build.sh ${{ steps.dotenv.outputs.plugin_name }}
 
       - name: Create release
         id: create_release
