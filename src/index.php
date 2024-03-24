@@ -22,12 +22,21 @@ function setup_db() {
 }
 
 function enqueue_my_styles() {
-    wp_enqueue_style("my-style", plugin_dir_url(__FILE__) . "style.css");
+    $src = plugin_dir_url(__FILE__) . "style.css";
+    wp_enqueue_style("my-style", $src, array());
 }
 
 function enqueue_my_scripts() {
-    wp_enqueue_script("my-script", plugin_dir_url(__FILE__) . "script.js", array("jquery"), "1.0", true);
+    $src = plugin_dir_url(__FILE__) . "script.js";
+    wp_enqueue_script("my-script", $src, array("jquery"));
+}
+
+function enqueue_my_block() {
+    $src = plugin_dir_url(__FILE__) . "block.js";
+    wp_enqueue_script("my-block", $src, array("wp-blocks", "wp-element", "wp-editor"));
 }
 
 add_action("wp_enqueue_scripts", "enqueue_my_styles");
-add_action('wp_enqueue_scripts', 'enqueue_my_scripts');
+add_action("wp_enqueue_scripts", "enqueue_my_scripts");
+
+add_action("enqueue_block_editor_assets", "enqueue_my_block");

@@ -6,10 +6,11 @@ This project is a WordPress plugin development boilerplate to jumpstart WordPres
 
 ![Plugin example](doc/plugin.png)
 
-With the boilerplate you get a simple template to get started with a plugin that includes a dedicated **admin page** as well as an example **shortcode to be rendered on any page**.
+With the boilerplate you get a simple template to get started with a plugin, which includes a dedicated **admin page**, an example **shortcode to be rendered on any page** as well as a **custom Gutenberg block**.
 
 Furthermore it includes a build script and Github Workflow to generate an installable plugin release.
 
+**Environment:**
 * Docker
 * Linux, macOS
 
@@ -68,13 +69,24 @@ The source of your plugin is in `src/`. There are already examples added, to get
 * `src/index.php`: General setup and global variables / functions
 * `src/admin.php`: Admin page
 * `src/frontend.php`: Code to render the custom shortcode
+* `src/block.js`: Custom Gutenberg block example
 * `src/script.js`: Custom JS code loaded with your plugin
 * `src/style.css`: Custom CSS code loaded with your plugin
 
-With the given example, you will get a custom admin page and a shortcode `[my-plugin]` that will be rendered with a "Hello World!" example.
+With the given example, you will get a custom admin page, a shortcode `[my-plugin]` that will be rendered with a "Hello World!" example as well as a custom Gutenberg block that simply renders a text.
+
+**Shortcode:**
 
 ![Shortcode example 1](doc/frontend1.png)
 ![Shortcode example 2](doc/frontend2.png)
+
+**Gutenberg block:**
+
+![Gutenberg example](doc/block.png)
+
+**Admin page:**
+
+![Admin example](doc/plugin.png)
 
 From here, you can get started with your plugin within an efficient local environment including a build workflow.
 
